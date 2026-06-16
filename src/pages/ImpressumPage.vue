@@ -73,9 +73,10 @@ import ScrollReveal from '@/components/ui/ScrollReveal.vue'
         <h2>Urheberrecht und Bildnachweise</h2>
         <p>
           Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
-          deutschen Urheberrecht. Die in diesem Premium-Redesign verwendeten Fotografien stammen aus
-          frei lizenzierten Quellen (Unsplash, kostenlos auch für kommerzielle Nutzung) und dienen der
-          gestalterischen Darstellung. Das Logo ist Eigentum der Gelenauer Wohnungsgesellschaft GmbH.
+          deutschen Urheberrecht. Ein Großteil der gezeigten Fotografien sind eigene Aufnahmen des
+          Erlebnislandes Kegelsberg. Einzelne Motive stammen aus lizenzierten Bildquellen
+          (u. a. © jayfish – stock.adobe.com) sowie aus frei lizenzierten Quellen (Unsplash). Das Logo
+          ist Eigentum der Gelenauer Wohnungsgesellschaft GmbH.
         </p>
 
         <router-link to="/" class="mt-10 inline-flex items-center gap-2 font-medium text-forest-700 hover:text-gold-600">

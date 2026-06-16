@@ -20,8 +20,8 @@ const plans = [
         <ScrollReveal :y="50">
           <div class="relative">
             <ParallaxImage
-              src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1100&q=80"
-              alt="Rustikale Blockhütte im Freibadgelände"
+              src="/images/blockhuetten.jpg"
+              alt="Rustikale Blockhütten im Freibadgelände"
               :speed="10"
               class="aspect-[5/4] rounded-3xl shadow-card"
             />

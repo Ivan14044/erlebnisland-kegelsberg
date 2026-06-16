@@ -7,8 +7,8 @@ import AnimatedHeading from '@/components/ui/AnimatedHeading.vue'
   <section class="relative flex h-[82vh] min-h-[560px] items-end overflow-hidden grain">
     <div class="absolute inset-0">
       <ParallaxImage
-        src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=2000&q=80"
-        alt="Gemütliche Blockhütte im Wald des Erzgebirges"
+        src="/images/blockhuetten.jpg"
+        alt="Gemütliche Blockhütten im Freibadgelände des Erlebnislandes Kegelsberg"
         :speed="12"
         eager
         class="h-full w-full"

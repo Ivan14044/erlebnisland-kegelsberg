@@ -7,8 +7,8 @@ import AnimatedHeading from '@/components/ui/AnimatedHeading.vue'
   <section class="relative flex h-[78vh] min-h-[540px] items-end overflow-hidden grain">
     <div class="absolute inset-0">
       <ParallaxImage
-        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2000&q=80"
-        alt="Weite Landschaft des Erzgebirges"
+        src="/images/aussichtsturm.jpg"
+        alt="Aussicht über das Erzgebirge vom Aussichtsturm"
         :speed="12"
         eager
         class="h-full w-full"

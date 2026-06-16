@@ -7,7 +7,7 @@ import AnimatedHeading from '@/components/ui/AnimatedHeading.vue'
   <section class="relative flex h-[82vh] min-h-[560px] items-end overflow-hidden grain">
     <div class="absolute inset-0">
       <ParallaxImage
-        src="https://images.unsplash.com/photo-1536768139911-e290a59011f4?w=2000&q=80"
+        src="/images/coaster.jpg"
         alt="Rasante Fahrt auf der Alpine Coaster Bahn"
         :speed="12"
         eager

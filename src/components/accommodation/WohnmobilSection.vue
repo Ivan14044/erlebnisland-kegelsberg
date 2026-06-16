@@ -18,8 +18,8 @@ const features = [
         <!-- Image (left) -->
         <ScrollReveal :y="50">
           <ParallaxImage
-            src="https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=1100&q=80"
-            alt="Wohnmobil-Stellplatz in der Natur des Erzgebirges"
+            src="/images/wohnmobil.jpg"
+            alt="Wohnmobilstellplatz im Erlebnisland Kegelsberg"
             :speed="10"
             class="aspect-[5/4] rounded-3xl shadow-card"
           />

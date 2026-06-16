@@ -60,7 +60,7 @@ const highlights = [
       <ScrollReveal :y="50">
         <div class="relative">
           <ParallaxImage
-            src="https://images.unsplash.com/photo-1567714608682-71e2e1506f4a?w=1000&q=80"
+            src="/images/coaster.jpg"
             alt="Schlitten der Alpine Coaster Bahn in Fahrt"
             :speed="10"
             class="aspect-[4/5] rounded-3xl shadow-card"

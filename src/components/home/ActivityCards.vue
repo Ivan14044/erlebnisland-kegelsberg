@@ -8,62 +8,62 @@ import { useTilt } from '@/composables/useTilt'
 const section = ref(null)
 useTilt(section, { max: 5 })
 
-// Verbatim texts from the live client website.
+// Verbatim texts + real photos from the live client website.
 const activities = [
   {
     title: 'Alpine Coaster Bahn',
     text: 'Erleben Sie Nervenkitzel pur auf unserer Alpine Coaster Bahn! Rasen Sie in rasanter Geschwindigkeit durch die atemberaubende Landschaft des Erzgebirges und spüren Sie den Adrenalinkick bei jeder Kurve.',
-    img: 'https://images.unsplash.com/photo-1567714608682-71e2e1506f4a?w=1100&q=80',
+    img: '/images/coaster.jpg',
     to: '/sommerrodelbahn',
     wide: true,
   },
   {
     title: 'Freibad',
     text: 'Tauchen Sie ein in unser erfrischendes Freibad mit mehreren Schwimmbecken! Egal ob zum Bahnen ziehen oder zum Planschen mit den Kindern – hier findet jeder seinen perfekten Platz im kühlen Nass.',
-    img: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80',
+    img: '/images/freibad.jpg',
   },
   {
     title: 'Aussichtsturm',
     text: 'Genießen Sie einen atemberaubenden Panoramablick vom Aussichtsturm! Von hier aus haben Sie eine fantastische Aussicht über das Erzgebirge und können die Schönheit der Natur in vollen Zügen bewundern.',
-    img: 'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&q=80',
+    img: '/images/aussichtsturm.jpg',
   },
   {
     title: 'Wildgehege',
     text: 'Entdecken Sie heimische Wildtiere hautnah in unserem Wildgehege! Ein besonderes Erlebnis für Groß und Klein, das Einblicke in die faszinierende Tierwelt des Erzgebirges bietet.',
-    img: 'https://images.unsplash.com/photo-1484406566174-9da000fda645?w=800&q=80',
+    img: '/images/wildgehege.jpg',
   },
   {
     title: 'Lehrpfad, Rad- und Wanderwege',
     text: 'Erkunden Sie die Natur auf unserem Naturlehrpfad und den zahlreichen Rad- und Wanderwegen! Lernen Sie Interessantes über die heimische Flora und Fauna und genießen Sie dabei die frische Luft und die herrliche Landschaft.',
-    img: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&q=80',
+    img: '/images/wanderwege.jpg',
   },
   {
     title: 'Tennisplatz',
     text: 'Schlagen Sie ein paar Bälle auf unserem gut gepflegten Tennisplatz! Ob Anfänger oder Profi, hier können Sie in idyllischer Umgebung Ihr Können unter Beweis stellen.',
-    img: 'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?w=800&q=80',
+    img: '/images/tennis.jpg',
   },
   {
     title: 'Blockhütten & Zinipi Lodges',
     text: 'Erleben Sie gemütliche Nächte in unseren rustikalen Blockhütten und modernen Zinipi Lodges! Ideal für Familien, Paare oder Gruppen, die das Abenteuer suchen und dennoch Komfort genießen möchten.',
-    img: 'https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1100&q=80',
+    img: '/images/blockhuetten.jpg',
     to: '/uebernachtung',
     wide: true,
   },
   {
     title: 'Wohnmobilstellplatz',
     text: 'Für alle, die mit dem Wohnmobil unterwegs sind, bieten wir großzügige Stellplätze mit allen notwendigen Annehmlichkeiten! Genießen Sie die Freiheit und Flexibilität Ihres mobilen Zuhauses im Herzen des Erzgebirges.',
-    img: 'https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=800&q=80',
+    img: '/images/wohnmobil.jpg',
     to: '/uebernachtung#wohnmobil',
   },
   {
     title: 'Spielplatz',
     text: 'Kinder können sich auf unserem großen Spielplatz so richtig austoben! Mit Schaukeln, Rutschen und Klettergerüsten ist für jede Menge Spaß und Bewegung gesorgt.',
-    img: 'https://images.unsplash.com/photo-1566937169390-7be4c63b8a0e?w=800&q=80',
+    img: '/images/spielplatz.jpg',
   },
   {
     title: 'Grillplatz & Lagerfeuerstelle',
     text: 'Lassen Sie den Tag gemütlich an unserer Grillplatz-Lagerfeuerstelle ausklingen! Perfekt für gesellige Abende mit Familie und Freunden, umgeben von der idyllischen Natur des Erzgebirges. Grillplätze können auch gemietet werden.',
-    img: 'https://images.unsplash.com/photo-1475483768296-6163e08872a1?w=800&q=80',
+    img: '/images/grillplatz.jpg',
   },
 ]
 </script>

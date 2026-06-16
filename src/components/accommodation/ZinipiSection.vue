@@ -59,8 +59,8 @@ const features = [
         <!-- Image (right) -->
         <ScrollReveal :y="50" class="order-1 lg:order-2">
           <ParallaxImage
-            src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?w=1100&q=80"
-            alt="Moderne Zinipi Lodge im Grünen"
+            src="/images/grillplatz.jpg"
+            alt="Gemütliche Lodges inmitten der Natur des Erzgebirges"
             :speed="10"
             class="aspect-[4/5] rounded-3xl shadow-card"
           />
