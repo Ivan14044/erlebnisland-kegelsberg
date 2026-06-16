@@ -42,7 +42,13 @@ const dining = [
             Das Erlebnisland Kegelsberg bietet eine Vielzahl an Freizeitmöglichkeiten direkt vor Ort.
             Entspannen Sie sich auf unserem Grillplatz oder an der Lagerfeuerstelle, während die Kinder
             sich auf den zwei Spielplätzen oder dem Trampolin austoben. Für sportliche Aktivitäten
-            stehen Ihnen ein Tennisplatz und eine Tischtennisanlage zur Verfügung.
+            stehen Ihnen ein Tennisplatz und eine Tischtennisanlage zur Verfügung. Unser
+            Gemeinschaftsraum ist ideal für gemütliche Spielabende. Auch das Erlebnisbad lädt zu einem
+            Besuch ein.
+          </p>
+          <p class="mt-5 leading-relaxed text-charcoal/70">
+            Zahlreiche Rad- und Wanderwege laden zu Erkundungstouren in die Umgebung ein. Auch ein
+            Ausflug in die nahe gelegene Stadt Chemnitz (Kulturhauptstadt 2025) lohnt sich auf jeden Fall.
           </p>
         </ScrollReveal>
       </div>

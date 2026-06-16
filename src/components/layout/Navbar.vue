@@ -2,10 +2,14 @@
 import { ref, computed, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useWindowScroll } from '@vueuse/core'
+import BrandCrest from '@/components/ui/BrandCrest.vue'
+import { useMagnetic } from '@/composables/useMagnetic'
 
 const { y } = useWindowScroll()
 const scrolled = computed(() => y.value > 40)
 const mobileOpen = ref(false)
+const header = ref(null)
+useMagnetic(header)
 
 const links = [
   { to: '/', label: 'Startseite' },
@@ -29,6 +33,7 @@ const darkText = computed(() => scrolled.value && !mobileOpen.value)
 
 <template>
   <header
+    ref="header"
     class="fixed inset-x-0 top-0 z-50 transition-[background,box-shadow,padding] duration-500"
     :class="[
       scrolled ? 'glass py-3 shadow-soft' : 'bg-transparent py-5',
@@ -38,19 +43,28 @@ const darkText = computed(() => scrolled.value && !mobileOpen.value)
       <!-- Wordmark -->
       <RouterLink
         to="/"
-        class="group flex flex-col leading-none transition-colors duration-500"
-        :class="darkText ? 'text-forest-900' : 'text-cream'"
+        data-cursor
+        class="group flex items-center gap-3 leading-none"
         @click="closeMenu"
         aria-label="Erlebnisland Kegelsberg — Startseite"
       >
-        <span class="font-display text-2xl font-semibold tracking-tight sm:text-[1.7rem]">
-          Erlebnisland
-        </span>
-        <span
-          class="eyebrow mt-0.5 text-[0.6rem] transition-colors duration-500"
-          :class="darkText ? 'text-gold-600' : 'text-gold-300'"
-        >
-          Kegelsberg · Erzgebirge
+        <BrandCrest
+          class="h-10 w-10 shrink-0 transition-transform duration-500 group-hover:rotate-[8deg] sm:h-11 sm:w-11"
+          :class="darkText ? 'text-forest-800' : 'text-gold-300'"
+        />
+        <span class="flex flex-col leading-none">
+          <span
+            class="font-display text-2xl font-semibold tracking-tight transition-colors duration-500 sm:text-[1.7rem]"
+            :class="darkText ? 'text-forest-900' : 'text-cream'"
+          >
+            Erlebnisland
+          </span>
+          <span
+            class="eyebrow mt-0.5 text-[0.6rem] transition-colors duration-500"
+            :class="darkText ? 'text-gold-600' : 'text-gold-300'"
+          >
+            Kegelsberg · Erzgebirge
+          </span>
         </span>
       </RouterLink>
 
@@ -67,7 +81,7 @@ const darkText = computed(() => scrolled.value && !mobileOpen.value)
           {{ link.label }}
         </RouterLink>
 
-        <RouterLink to="/uebernachtung#anfrage" class="btn-gold !py-2.5 !px-6 text-sm">
+        <RouterLink to="/uebernachtung#anfrage" data-magnetic data-cursor class="btn-gold !py-2.5 !px-6 text-sm">
           Jetzt anfragen
         </RouterLink>
       </nav>

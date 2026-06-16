@@ -26,9 +26,10 @@ import ScrollReveal from '@/components/ui/ScrollReveal.vue'
         <h2>1. Verantwortlicher</h2>
         <p>
           Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br />
-          GEWO GmbH, Kemtauer Straße 27, 09423 Gelenau / Erzgeb.<br />
+          Gelenauer Wohnungsgesellschaft GmbH (GEWO)<br />
+          Werner-Seelenbinder-Weg 12, 09423 Gelenau/Erzgeb.<br />
           Telefon: <a href="tel:+49372977900">037297 / 7900</a> · E-Mail:
-          <a href="mailto:fewo@gewo-gmbh.de">fewo@gewo-gmbh.de</a>
+          <a href="mailto:info@gewo-gmbh.de">info@gewo-gmbh.de</a>
         </p>
 
         <h2>2. Allgemeines zur Datenverarbeitung</h2>

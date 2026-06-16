@@ -79,7 +79,7 @@ const notes = [
               <p class="text-sm leading-relaxed text-cream/85">
                 <span class="font-semibold text-cream">Sicherheitshinweis:</span>
                 Bei Dunkelheit, schlechten Witterungsverhältnissen, Feuchtigkeit und Gewitter muss die
-                Bahn aus Sicherheitsgründen geschlossen bleiben.
+                Bahn aus Sicherheitsgründen geschlossen bleiben. Wir bitten um Ihr Verständnis.
               </p>
             </div>
           </ScrollReveal>

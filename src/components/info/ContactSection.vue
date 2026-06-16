@@ -20,7 +20,7 @@ const cards = [
   {
     icon: 'mail',
     label: 'E-Mail',
-    lines: ['fewo@gewo-gmbh.de'],
+    lines: ['fewo@gewo-gmbh.de', 'info@gewo-gmbh.de'],
     href: 'mailto:fewo@gewo-gmbh.de',
     action: 'E-Mail schreiben',
   },

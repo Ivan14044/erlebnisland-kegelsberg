@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import BrandCrest from '@/components/ui/BrandCrest.vue'
 
 const year = new Date().getFullYear()
 
@@ -31,9 +32,7 @@ const stays = [
       <!-- Brand -->
       <div class="lg:col-span-4">
         <div class="inline-flex items-center gap-4">
-          <div class="grid h-16 w-16 place-items-center rounded-2xl bg-cream p-2 shadow-soft">
-            <img src="/logo.png" alt="Logo Erlebnisland Kegelsberg" class="h-full w-full object-contain" />
-          </div>
+          <BrandCrest class="h-14 w-14 shrink-0 text-gold-300" />
           <div class="leading-none">
             <p class="font-display text-2xl font-semibold text-cream">Erlebnisland</p>
             <p class="eyebrow mt-1 text-[0.6rem] text-gold-400">Kegelsberg · Erzgebirge</p>
@@ -108,7 +107,10 @@ const stays = [
           </li>
           <li class="flex gap-3">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-gold-400" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            <a href="mailto:fewo@gewo-gmbh.de" class="text-cream/70 hover:text-gold-300">fewo@gewo-gmbh.de</a>
+            <span class="text-cream/70">
+              <a href="mailto:fewo@gewo-gmbh.de" class="hover:text-gold-300">fewo@gewo-gmbh.de</a><br />
+              <a href="mailto:info@gewo-gmbh.de" class="hover:text-gold-300">info@gewo-gmbh.de</a>
+            </span>
           </li>
         </ul>
       </div>

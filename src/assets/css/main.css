@@ -283,3 +283,43 @@
     transform: none !important;
   }
 }
+
+/* =========================================================================
+   ELEVATION — custom cursor, godrays, card spotlight
+   ========================================================================= */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Light shafts through the canopy (hero atmosphere) */
+.godrays {
+  background: repeating-linear-gradient(
+    102deg,
+    rgba(232, 197, 71, 0.12) 0px,
+    rgba(232, 197, 71, 0.12) 2px,
+    transparent 2px,
+    transparent 26px
+  );
+  -webkit-mask-image: radial-gradient(130% 90% at 72% -10%, #000 0%, transparent 68%);
+  mask-image: radial-gradient(130% 90% at 72% -10%, #000 0%, transparent 68%);
+  mix-blend-mode: screen;
+}
+
+/* Cursor-following highlight inside hover cards (reads --spot-x/--spot-y) */
+.card-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s var(--ease-soft);
+  background: radial-gradient(
+    240px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(232, 197, 71, 0.16),
+    transparent 62%
+  );
+}
+.group:hover .card-spotlight {
+  opacity: 1;
+}

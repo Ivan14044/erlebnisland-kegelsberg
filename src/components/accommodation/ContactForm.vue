@@ -2,6 +2,10 @@
 import { reactive, ref } from 'vue'
 import AnimatedHeading from '@/components/ui/AnimatedHeading.vue'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
+import { useMagnetic } from '@/composables/useMagnetic'
+
+const root = ref(null)
+useMagnetic(root)
 
 const form = reactive({ name: '', email: '', phone: '', message: '' })
 const errors = reactive({ name: '', email: '', phone: '' })
@@ -41,7 +45,7 @@ function revalidate() {
 </script>
 
 <template>
-  <section id="anfrage" class="relative scroll-mt-24 overflow-hidden bg-forest-950 py-24 text-cream sm:py-32 grain">
+  <section id="anfrage" ref="root" class="relative scroll-mt-24 overflow-hidden bg-forest-950 py-24 text-cream sm:py-32 grain">
     <div
       class="pointer-events-none absolute -right-32 -top-20 h-[28rem] w-[28rem] rounded-full opacity-15 blur-3xl"
       style="background: radial-gradient(circle, var(--color-gold-400), transparent 70%);"
@@ -77,7 +81,7 @@ function revalidate() {
                 </span>
                 <h3 class="font-display text-3xl font-semibold text-cream">Vielen Dank!</h3>
                 <p class="mt-3 max-w-sm text-cream/70">
-                  Ihre Anfrage ist bei uns eingegangen. Wir melden uns so schnell wie möglich bei Ihnen.
+                  Danke, dass Sie uns kontaktiert haben. Wir werden uns schnellstmöglich bei Ihnen melden.
                 </p>
                 <button class="btn-outline mt-8" @click="reset">Neue Anfrage</button>
               </div>
@@ -151,7 +155,7 @@ function revalidate() {
                 <label for="cf-message" class="floating-label">Nachricht</label>
               </div>
 
-              <button type="submit" class="btn-gold w-full justify-center sm:w-auto">
+              <button type="submit" data-magnetic data-cursor class="btn-gold w-full justify-center sm:w-auto">
                 Anfrage senden
                 <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>
               </button>
@@ -180,7 +184,10 @@ function revalidate() {
                 </li>
                 <li class="flex gap-3">
                   <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-gold-300" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                  <a href="mailto:fewo@gewo-gmbh.de" class="text-cream/80 hover:text-gold-300">fewo@gewo-gmbh.de</a>
+                  <span class="text-cream/80">
+                    <a href="mailto:fewo@gewo-gmbh.de" class="hover:text-gold-300">fewo@gewo-gmbh.de</a> ·
+                    <a href="mailto:info@gewo-gmbh.de" class="hover:text-gold-300">info@gewo-gmbh.de</a>
+                  </span>
                 </li>
               </ul>
             </div>

@@ -3,9 +3,11 @@ import { ref } from 'vue'
 import ParallaxImage from '@/components/ui/ParallaxImage.vue'
 import AnimatedHeading from '@/components/ui/AnimatedHeading.vue'
 import { useParallax } from '@/composables/useParallax'
+import { useMagnetic } from '@/composables/useMagnetic'
 
 const hero = ref(null)
 useParallax(hero, { strength: 34 })
+useMagnetic(hero)
 
 const scrollToActivities = () => {
   const el = document.getElementById('abenteuer')
@@ -27,6 +29,7 @@ const scrollToActivities = () => {
       />
     </div>
     <div class="absolute inset-0 hero-gradient" />
+    <div class="godrays pointer-events-none absolute inset-0 opacity-60" />
 
     <!-- Decorative mouse-parallax glow orbs -->
     <div
@@ -64,11 +67,11 @@ const scrollToActivities = () => {
         </p>
 
         <div class="hero-fade mt-10 flex flex-wrap items-center gap-4" style="--d: 1.35s">
-          <button class="btn-gold" @click="scrollToActivities">
+          <button data-magnetic data-cursor class="btn-gold" @click="scrollToActivities">
             Abenteuer entdecken
             <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
           </button>
-          <RouterLink to="/uebernachtung#anfrage" class="btn-outline">
+          <RouterLink to="/uebernachtung#anfrage" data-magnetic data-cursor class="btn-outline">
             Aufenthalt anfragen
           </RouterLink>
         </div>

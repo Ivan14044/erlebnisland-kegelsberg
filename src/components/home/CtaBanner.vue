@@ -1,12 +1,17 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import ParallaxImage from '@/components/ui/ParallaxImage.vue'
 import AnimatedHeading from '@/components/ui/AnimatedHeading.vue'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
+import { useMagnetic } from '@/composables/useMagnetic'
+
+const root = ref(null)
+useMagnetic(root)
 </script>
 
 <template>
-  <section class="relative flex min-h-[70vh] items-center overflow-hidden grain">
+  <section ref="root" class="relative flex min-h-[70vh] items-center overflow-hidden grain">
     <div class="absolute inset-0">
       <ParallaxImage
         src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1800&q=80"
@@ -31,11 +36,11 @@ import ScrollReveal from '@/components/ui/ScrollReveal.vue'
         />
         <ScrollReveal :delay="0.2">
           <div class="mt-9 flex flex-wrap gap-4">
-            <RouterLink to="/uebernachtung#anfrage" class="btn-gold">
+            <RouterLink to="/uebernachtung#anfrage" data-magnetic data-cursor class="btn-gold">
               Aufenthalt anfragen
               <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </RouterLink>
-            <RouterLink to="/sommerrodelbahn" class="btn-outline">Sommerrodelbahn entdecken</RouterLink>
+            <RouterLink to="/sommerrodelbahn" data-magnetic data-cursor class="btn-outline">Sommerrodelbahn entdecken</RouterLink>
           </div>
         </ScrollReveal>
       </div>

@@ -2,12 +2,14 @@
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { useScrollAnimation } from '@/composables/useScrollAnimation'
+import { useTilt } from '@/composables/useTilt'
 
 defineProps({
   plans: { type: Array, required: true },
 })
 
 const root = ref(null)
+useTilt(root, { max: 6 })
 
 useScrollAnimation(({ stagger }) => {
   if (!root.value) return
@@ -32,13 +34,17 @@ useScrollAnimation(({ stagger }) => {
     <div
       v-for="plan in plans"
       :key="plan.name"
-      class="pricing-card group relative flex flex-col rounded-3xl border p-7 backdrop-blur-md transition-transform duration-500 hover:-translate-y-2"
+      data-tilt
+      data-cursor
+      class="pricing-card group relative flex flex-col rounded-3xl border p-7 backdrop-blur-md"
       :class="
         plan.featured
-          ? 'border-gold-400/60 bg-white/80 shadow-[var(--shadow-glow)] lg:-translate-y-3'
+          ? 'border-gold-400/60 bg-white/80 shadow-[var(--shadow-glow)] lg:-mt-3'
           : 'border-forest-900/10 bg-white/55 shadow-soft'
       "
     >
+      <span class="card-spotlight" />
+
       <span
         v-if="plan.featured"
         class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold-500 px-4 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-forest-950"
@@ -64,6 +70,7 @@ useScrollAnimation(({ stagger }) => {
 
       <RouterLink
         to="/uebernachtung#anfrage"
+        data-cursor
         class="mt-7 inline-flex items-center justify-center gap-2 rounded-full py-3 text-sm font-semibold transition-colors duration-300"
         :class="
           plan.featured

@@ -18,42 +18,41 @@ import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 
     <section class="bg-cream py-16 sm:py-24">
       <ScrollReveal as="div" :y="30" class="legal mx-auto max-w-3xl px-5 sm:px-8">
-        <p class="rounded-2xl border border-gold-500/30 bg-gold-500/10 p-4 text-sm text-charcoal/70">
-          Hinweis: Dieser Entwurf ist Teil eines Premium-Redesigns. Bitte ergänzen bzw. prüfen Sie die
-          rechtlich erforderlichen Angaben vor der Veröffentlichung.
-        </p>
-
         <h2>Angaben gemäß § 5 DDG</h2>
         <p>
-          GEWO GmbH<br />
-          Kemtauer Straße 27<br />
-          09423 Gelenau / Erzgeb.
+          Gelenauer Wohnungsgesellschaft GmbH (GEWO)<br />
+          Werner-Seelenbinder-Weg 12<br />
+          09423 Gelenau/Erzgeb.<br />
+          Deutschland
         </p>
 
         <h2>Vertreten durch</h2>
-        <p>Geschäftsführung: <em>[bitte ergänzen]</em></p>
+        <p>Geschäftsführer: Sebastian Haustein</p>
 
         <h2>Kontakt</h2>
         <p>
           Telefon: <a href="tel:+49372977900">037297 / 7900</a> (Mo–Fr 10–14 Uhr)<br />
-          E-Mail: <a href="mailto:fewo@gewo-gmbh.de">fewo@gewo-gmbh.de</a>
+          E-Mail: <a href="mailto:info@gewo-gmbh.de">info@gewo-gmbh.de</a> · <a href="mailto:fewo@gewo-gmbh.de">fewo@gewo-gmbh.de</a>
         </p>
 
         <h2>Registereintrag</h2>
         <p>
           Eintragung im Handelsregister<br />
-          Registergericht: <em>[Amtsgericht – bitte ergänzen]</em><br />
-          Registernummer: <em>[HRB – bitte ergänzen]</em>
+          Registergericht: Amtsgericht Chemnitz<br />
+          Registernummer: HRB 12122
         </p>
 
-        <h2>Umsatzsteuer-ID</h2>
+        <h2>Umsatzsteuer-Identifikationsnummer</h2>
         <p>
-          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
-          <em>[bitte ergänzen]</em>
+          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+          DE 345147968
         </p>
 
         <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
-        <p>GEWO GmbH, Kemtauer Straße 27, 09423 Gelenau / Erzgeb.</p>
+        <p>Gelenauer Wohnungsgesellschaft GmbH, Werner-Seelenbinder-Weg 12, 09423 Gelenau/Erzgeb.</p>
+
+        <h2>Standort des Ferienparks</h2>
+        <p>Erlebnisland Kegelsberg, Kemtauer Straße 27, 09423 Gelenau/Erzgeb.</p>
 
         <h2>Haftung für Inhalte</h2>
         <p>
@@ -71,11 +70,12 @@ import ScrollReveal from '@/components/ui/ScrollReveal.vue'
           Seiten verantwortlich.
         </p>
 
-        <h2>Urheberrecht</h2>
+        <h2>Urheberrecht und Bildnachweise</h2>
         <p>
           Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
-          deutschen Urheberrecht. Die verwendeten Fotografien stammen aus frei lizenzierten Quellen
-          (u. a. Unsplash) und dienen der gestalterischen Darstellung.
+          deutschen Urheberrecht. Die in diesem Premium-Redesign verwendeten Fotografien stammen aus
+          frei lizenzierten Quellen (Unsplash, kostenlos auch für kommerzielle Nutzung) und dienen der
+          gestalterischen Darstellung. Das Logo ist Eigentum der Gelenauer Wohnungsgesellschaft GmbH.
         </p>
 
         <router-link to="/" class="mt-10 inline-flex items-center gap-2 font-medium text-forest-700 hover:text-gold-600">

@@ -43,7 +43,14 @@ const highlights = [
             <p>
               Nach der aufregenden Abfahrt können Sie sich in unserem gemütlichen Café entspannen
               und bei einem erfrischenden Getränk die Eindrücke Revue passieren lassen. Für die
-              kleinen Gäste gibt es zudem einen nahegelegenen Spielplatz.
+              kleinen Gäste gibt es zudem einen nahegelegenen Spielplatz, auf dem sie sich weiter
+              austoben können.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal :y="26" :delay="0.15">
+            <p>
+              Kommen Sie ins Erlebnisland Kegelsberg und entdecken Sie den Fahrspaß auf unserer
+              Sommerrodelbahn – ein Highlight für Groß und Klein im schönen Erzgebirge!
             </p>
           </ScrollReveal>
         </div>
