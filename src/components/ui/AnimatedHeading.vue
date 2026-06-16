@@ -39,7 +39,21 @@ onMounted(() => {
   }
 
   if (props.trigger === 'load') {
-    gsap.to(inners, vars)
+    // Play when the intro curtain has lifted (or immediately if already ready).
+    const play = () => gsap.to(inners, vars)
+    if (window.__ekReady) {
+      play()
+    } else {
+      let played = false
+      const onReady = () => {
+        if (played) return
+        played = true
+        play()
+      }
+      window.addEventListener('ek:ready', onReady, { once: true })
+      // Safety net: never leave the headline hidden if no signal arrives.
+      window.setTimeout(onReady, 6000)
+    }
   } else {
     gsap.to(inners, {
       ...vars,

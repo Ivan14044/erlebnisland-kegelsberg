@@ -7,10 +7,18 @@ import { prefersReducedMotion } from '@/composables/useScrollAnimation'
 const show = ref(true)
 const letters = 'ERLEBNISLAND'.split('')
 
+// Signal the rest of the app that the curtain is gone, so hero headlines
+// can choreograph their entrance to the reveal.
+function signalReady() {
+  window.__ekReady = true
+  window.dispatchEvent(new Event('ek:ready'))
+}
+
 onMounted(() => {
   // Show the intro only once per browser session.
   if (sessionStorage.getItem('ek-intro-seen')) {
     show.value = false
+    signalReady()
     return
   }
   sessionStorage.setItem('ek-intro-seen', '1')
@@ -22,6 +30,7 @@ onMounted(() => {
     done = true
     document.body.style.overflow = ''
     show.value = false
+    signalReady()
   }
 
   // Safety net: always lift the curtain even if rAF is throttled (background tab).
