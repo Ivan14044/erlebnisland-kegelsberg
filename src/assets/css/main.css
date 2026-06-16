@@ -1,0 +1,285 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   ERLEBNISLAND KEGELSBERG — Design System
+   "Cinematic Erzgebirge": Deep forest immersion meets luxury hospitality.
+   ========================================================================= */
+
+@theme {
+  /* ---- Forest greens (primary brand) ---- */
+  --color-forest-950: #0c1810;
+  --color-forest-900: #1a2e1a;
+  --color-forest-800: #224020;
+  --color-forest-700: #2d5a27;
+  --color-forest-600: #3a6e33;
+  --color-forest-500: #4d8543;
+
+  /* ---- Muted sage (secondary / nature) ---- */
+  --color-sage-300: #c2d0b9;
+  --color-sage-400: #a8bca0;
+  --color-sage-500: #8fa584;
+  --color-sage-600: #6f8567;
+  --color-sage-700: #56684f;
+
+  /* ---- Warm amber / gold (accent / luxury) ---- */
+  --color-gold-200: #f3e4b0;
+  --color-gold-300: #e8c547;
+  --color-gold-400: #d9b65c;
+  --color-gold-500: #c8a45a;
+  --color-gold-600: #a8843f;
+  --color-gold-700: #856630;
+
+  /* ---- Neutrals ---- */
+  --color-cream: #faf8f2;
+  --color-cream-100: #f4efe4;
+  --color-cream-200: #e9e1cf;
+  --color-charcoal: #1a1a1a;
+  --color-charcoal-soft: #2b2b28;
+
+  /* ---- Typography ---- */
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* ---- Custom easing & timing ---- */
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- Shadows ---- */
+  --shadow-soft: 0 10px 40px -12px rgba(12, 24, 16, 0.25);
+  --shadow-card: 0 24px 60px -20px rgba(12, 24, 16, 0.45);
+  --shadow-glow: 0 0 0 1px rgba(200, 164, 90, 0.4), 0 18px 50px -16px rgba(200, 164, 90, 0.35);
+}
+
+/* =========================================================================
+   BASE LAYER
+   ========================================================================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga", "calt";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-gold-300);
+    color: var(--color-forest-950);
+  }
+
+  /* Refined scrollbar */
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-cream-100);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-sage-500);
+    border: 3px solid var(--color-cream-100);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-forest-700);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-500);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  img {
+    -webkit-user-drag: none;
+  }
+}
+
+/* =========================================================================
+   COMPONENT UTILITIES
+   ========================================================================= */
+@layer components {
+  /* Eyebrow label — uppercase tracked sans serif */
+  .eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 0.72rem;
+    font-weight: 600;
+  }
+
+  /* Glass-morphism (light, for navbar on scroll) */
+  .glass {
+    background: rgba(250, 248, 242, 0.72);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom: 1px solid rgba(143, 165, 132, 0.25);
+  }
+
+  /* Glass dark (pricing cards over imagery) */
+  .glass-dark {
+    background: rgba(12, 24, 16, 0.55);
+    backdrop-filter: blur(16px) saturate(130%);
+    -webkit-backdrop-filter: blur(16px) saturate(130%);
+    border: 1px solid rgba(200, 164, 90, 0.22);
+  }
+
+  /* Animated underline link */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s var(--ease-lux);
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Primary button — gold fill with lift */
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.2rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-600));
+    color: var(--color-forest-950);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    box-shadow: 0 10px 30px -10px rgba(168, 132, 63, 0.6);
+    transition: transform 0.4s var(--ease-lux), box-shadow 0.4s var(--ease-lux);
+  }
+  .btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px -12px rgba(168, 132, 63, 0.7);
+  }
+
+  /* Outline button — for dark backgrounds */
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1rem 2.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(250, 248, 242, 0.55);
+    color: var(--color-cream);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background 0.4s var(--ease-lux), border-color 0.4s var(--ease-lux), color 0.4s var(--ease-lux);
+  }
+  .btn-outline:hover {
+    background: var(--color-cream);
+    color: var(--color-forest-900);
+    border-color: var(--color-cream);
+  }
+}
+
+/* =========================================================================
+   UTILITY HELPERS
+   ========================================================================= */
+@layer utilities {
+  /* Film grain / noise overlay for atmosphere */
+  .grain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Cinematic bottom-to-top dark gradient over hero imagery.
+     Kept dark enough in the mid-band to keep cream text legible on
+     bright/high-key photography. */
+  .hero-gradient {
+    background:
+      linear-gradient(
+        to top,
+        rgba(10, 20, 13, 0.94) 0%,
+        rgba(10, 20, 13, 0.68) 45%,
+        rgba(10, 20, 13, 0.6) 72%,
+        rgba(10, 20, 13, 0.72) 100%
+      ),
+      linear-gradient(to right, rgba(10, 20, 13, 0.5) 0%, rgba(10, 20, 13, 0) 60%);
+  }
+
+  .text-shadow-lux {
+    text-shadow: 0 2px 30px rgba(12, 24, 16, 0.6), 0 1px 3px rgba(12, 24, 16, 0.5);
+  }
+
+  /* Reveal initial state (GSAP toggles to visible) */
+  .reveal-init {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  /* Decorative dotted/gradient section divider */
+  .divider-leaf {
+    background: linear-gradient(90deg, transparent, var(--color-gold-500), transparent);
+    height: 1px;
+  }
+}
+
+/* =========================================================================
+   PAGE TRANSITIONS (Vue <transition name="page">)
+   ========================================================================= */
+.page-enter-active {
+  transition: opacity 0.6s var(--ease-lux), transform 0.6s var(--ease-lux);
+}
+.page-leave-active {
+  transition: opacity 0.35s var(--ease-soft), transform 0.35s var(--ease-soft);
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-16px);
+}
+
+/* =========================================================================
+   ACCESSIBILITY — respect reduced motion
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
