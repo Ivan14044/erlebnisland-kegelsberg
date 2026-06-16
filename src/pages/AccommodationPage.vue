@@ -4,6 +4,7 @@ import BlockhuttenSection from '@/components/accommodation/BlockhuttenSection.vu
 import ZinipiSection from '@/components/accommodation/ZinipiSection.vue'
 import WohnmobilSection from '@/components/accommodation/WohnmobilSection.vue'
 import ContactForm from '@/components/accommodation/ContactForm.vue'
+import AwardsSection from '@/components/home/AwardsSection.vue'
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import ContactForm from '@/components/accommodation/ContactForm.vue'
     <BlockhuttenSection />
     <ZinipiSection />
     <WohnmobilSection />
+    <AwardsSection />
     <ContactForm />
   </div>
 </template>

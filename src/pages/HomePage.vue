@@ -4,6 +4,7 @@ import HeroSection from '@/components/home/HeroSection.vue'
 import ActivityCards from '@/components/home/ActivityCards.vue'
 import FeatureHighlights from '@/components/home/FeatureHighlights.vue'
 import CtaBanner from '@/components/home/CtaBanner.vue'
+import AwardsSection from '@/components/home/AwardsSection.vue'
 import AnimatedHeading from '@/components/ui/AnimatedHeading.vue'
 import ScrollReveal from '@/components/ui/ScrollReveal.vue'
 import { useCountUp } from '@/composables/useCountUp'
@@ -70,6 +71,7 @@ const stats = [
 
     <ActivityCards />
     <FeatureHighlights />
+    <AwardsSection />
     <CtaBanner />
   </div>
 </template>
